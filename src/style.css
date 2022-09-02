@@ -1,0 +1,110 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 82.5%;
+	font-family: "Ubuntu Mono", monospace;
+	color: #fff;
+}
+
+.container {
+	width: 100%;
+	padding: 5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	position: relative;
+}
+
+.backdrop {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	inset: 0;
+	z-index: -100000;
+	background: rgb(70, 21, 213);
+	background: radial-gradient(
+		circle,
+		rgba(70, 21, 213, 1) 35%,
+		rgba(27, 0, 108, 1) 100%
+	);
+}
+
+.terminal {
+	background-color: #190040;
+	width: 100rem;
+	min-height: 60vh;
+	margin: auto;
+	border-radius: 20px;
+}
+
+/* HEADER BAR */
+.terminal__head {
+	background-color: #dee2e6;
+	width: 100%;
+	border-radius: 20px 20px 0 0;
+	padding: 1rem 2rem;
+	display: flex;
+	gap: 0.7rem;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.head__circle {
+	height: 15px;
+	width: 15px;
+	border-radius: 100%;
+}
+
+.head__circle--red {
+	background-color: #e03131;
+}
+
+.head__circle--yellow {
+	background-color: #fcc419;
+}
+
+.head__circle--green {
+	background-color: #37b24d;
+}
+
+/* MAIN PART */
+.terminal__main {
+	padding: 2rem;
+	font-size: 1.6rem;
+}
+
+.space {
+	margin-bottom: 1rem;
+}
+
+.prompt {
+	color: #ae3ec9;
+	position: relative;
+}
+
+.terminal__main--input {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 1.5rem;
+	margin-bottom: 1rem;
+}
+
+.prompt__input {
+	background-color: transparent;
+	color: inherit;
+	font-size: inherit;
+	border: none;
+	width: 80%;
+	caret-color: #ae3ec9;
+}
+
+.prompt__input:focus {
+	outline: none;
+}

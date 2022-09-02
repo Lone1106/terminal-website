@@ -3,9 +3,33 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap"
+			rel="stylesheet"
+		/>
 		<link rel="stylesheet" type="text/css" href="src/style.css" />
 		<script defer type="module" src="src/script.js"></script>
 		<title>Terminal Website</title>
 	</head>
-	<body></body>
+	<body>
+		<main class="container">
+			<div class="backdrop"></div>
+			<section class="terminal">
+				<header class="terminal__head">
+					<div class="head__circle head__circle--red"></div>
+					<div class="head__circle head__circle--yellow"></div>
+					<div class="head__circle head__circle--green"></div>
+				</header>
+
+				<div id="terminal__main" class="terminal__main">
+					<!-- <div class="terminal__main--input">
+						<span class="prompt">user@current ~ %</span>
+						<input minlength="1" class="prompt__input" type="text" />
+					</div> -->
+				</div>
+			</section>
+		</main>
+	</body>
 </html>
