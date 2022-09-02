@@ -10,6 +10,10 @@ html {
 	color: #fff;
 }
 
+::-webkit-scrollbar {
+	display: none;
+}
+
 .container {
 	width: 100%;
 	padding: 5rem;
@@ -37,9 +41,11 @@ html {
 .terminal {
 	background-color: #190040;
 	width: 100rem;
-	min-height: 60vh;
+	height: 600px;
 	margin: auto;
 	border-radius: 20px;
+	overflow-y: scroll;
+	position: relative;
 }
 
 /* HEADER BAR */
@@ -52,6 +58,9 @@ html {
 	gap: 0.7rem;
 	align-items: center;
 	justify-content: flex-start;
+	position: sticky;
+	top: 0;
+	left: 0;
 }
 
 .head__circle {
@@ -74,37 +83,15 @@ html {
 
 /* MAIN PART */
 .terminal__main {
-	padding: 2rem;
+	padding: 1rem 2rem;
 	font-size: 1.6rem;
 }
 
-.space {
-	margin-bottom: 1rem;
+.linespace {
+	margin-bottom: 0.7rem;
 }
 
 .prompt {
-	color: #ae3ec9;
-	position: relative;
-}
-
-.terminal__main--input {
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	gap: 1.5rem;
-	margin-bottom: 1rem;
-}
-
-.prompt__input {
-	background-color: transparent;
-	color: inherit;
-	font-size: inherit;
-	border: none;
-	width: 80%;
-	caret-color: #ae3ec9;
-}
-
-.prompt__input:focus {
-	outline: none;
+	color: #be4bdb;
+	margin-right: 1rem;
 }

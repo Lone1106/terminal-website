@@ -1,35 +1,50 @@
 const textContainter = document.getElementById("terminal__main");
 
-function createTextLine(text) {
+const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+
+function createText(text) {
 	const p = document.createElement("p");
-	p.classList.add("space");
-	p.innerHTML = `<span class="prompt">user@current ~ %</span> ${text}`;
+	p.setAttribute("class", "linespace");
+	p.innerHTML = text;
+	textContainter.appendChild(p);
+}
+
+function clearChilds() {
+	textContainter.innerHTML = "";
+}
+
+function newLine() {
+	const p = document.createElement("p");
+	const span1 = document.createElement("span");
+	const span2 = document.createElement("span");
+	span1.textContent = "user@guest";
+	span2.textContent = " ~ %";
+	p.appendChild(span1);
+	p.appendChild(span2);
 	textContainter.appendChild(p);
 }
 
 function createInputLine() {
-	const div = document.createElement("div");
-	div.classList.add("space");
-	div.innerHTML = `
-						<span class="prompt">user@current ~ %</span>
-						<input minlength="1" class="prompt__input" type="text" />
-					`;
-	textContainter.appendChild(div);
+	const p = document.createElement("p");
+	const span = document.createElement("span");
+	const inp = document.createElement("input");
+	p.setAttribute("class", "linespace");
+	span.setAttribute("class", "prompt");
+	span.innerHTML = "user@guest ~ %";
+	p.appendChild(span);
+	p.appendChild(inp);
+	textContainter.appendChild(p);
 }
 
-function lineTimer(func) {
-	const interval = setInterval(() => {
-		func();
-		clearInterval(interval);
-	}, 500);
+async function startup() {
+	await delay(300);
+	createText("Connecting to server. . .");
+	await delay(300);
+	createText("Loading database. . . ");
+	await delay(300);
+	clearChilds();
+	await delay(300);
+	createInputLine();
 }
 
-function getInputValue() {
-	const prompt = document.querySelector(".prompt__input");
-	console.log(prompt.value);
-	prompt.value = "";
-}
-
-textContainter.addEventListener("keydown", (e) => {
-	if (e.key === "Enter") getInputValue();
-});
+startup();
