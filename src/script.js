@@ -44,6 +44,11 @@ function getInput() {
 	return data;
 }
 
+function scrollToBottom () {
+	let terminal = document.querySelector(".terminal");
+  terminal.scrollTop = terminal.scrollHeight;
+}
+
 // CLEAR FUNCTIONS
 async function clearInput() {
 	const label = document.querySelector(".cursor");
@@ -180,6 +185,8 @@ async function help() {
 	createInfoLine("projects", "take a look at the owners projects");
 	await delay(lineDelay);
 	createInfoLine("links", "get links for the owners social media");
+	await delay(lineDelay);
+	scrollToBottom();
 }
 
 async function about() {
@@ -196,9 +203,14 @@ async function about() {
 	await delay(lineDelay);
 	createInfoLine("Skills", "HTML, CSS/SASS, JS, React, Python, Adobe AI/PS");
 	await delay(lineDelay);
-	createInfoLine("Languages", "German, English, Japanese, Spanish");
+	createInfoLine(
+		"Languages",
+		"German(N), English(C2), Japanese(B1), Spanish(A1)"
+	);
 	await delay(lineDelay);
 	createInfoLine("Hobbies", "Reading, coding, tennis, meeting with friends");
+	await delay(lineDelay);
+	scrollToBottom();
 }
 
 async function projects() {
@@ -212,6 +224,8 @@ async function projects() {
 	createText("React Flashcard Appliation");
 	createLink("view on Github", "https://github.com/Lone1106/flashcard-app");
 	createLink("live preview", "https://www.google.de/");
+	await delay(lineDelay);
+	scrollToBottom();
 }
 
 async function links() {
@@ -221,6 +235,8 @@ async function links() {
 	createLink("GitHub", "https://github.com/Lone1106");
 	await delay(lineDelay);
 	createLink("LinkedIn", "https://www.linkedin.com/");
+	await delay(lineDelay);
+	scrollToBottom();
 }
 
 // HANDLE INPUTS
