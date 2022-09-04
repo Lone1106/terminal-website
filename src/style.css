@@ -14,6 +14,12 @@ html {
 	display: none;
 }
 
+h3 {
+	color: #4263eb;
+	letter-spacing: 1px;
+	text-decoration: underline;
+}
+
 .container {
 	width: 100%;
 	padding: 5rem;
@@ -51,10 +57,15 @@ html {
 	display: flex;
 	gap: 0.7rem;
 	align-items: center;
-	justify-content: flex-start;
+	justify-content: space-between;
 	position: sticky;
 	top: 0;
 	left: 0;
+}
+
+.terminal__head--buttons {
+	display: flex;
+	gap: 0.7rem;
 }
 
 .head__circle {
@@ -75,6 +86,11 @@ html {
 	background-color: #37b24d;
 }
 
+.terminal__head--text {
+	color: #000;
+	letter-spacing: 0.5px;
+}
+
 /* MAIN PART */
 .terminal__main {
 	padding: 1rem 2rem;
@@ -83,11 +99,13 @@ html {
 
 .linespace {
 	margin-bottom: 0.7rem;
+	letter-spacing: 0.5px;
 }
 
 .prompt {
 	color: #be4bdb;
 	margin-right: 1rem;
+	letter-spacing: 0.5px;
 }
 
 @keyframes cursor-blink {
@@ -120,4 +138,27 @@ html {
 
 .error {
 	color: #e03131;
+	letter-spacing: 0.5px;
 }
+
+.socialLink:link,
+.socialLink:visited {
+	text-decoration: none;
+	color: #37b24d;
+}
+
+.socialLink:hover {
+	color: #69db7c;
+}
+
+.spaceholder {
+	margin-right: 1rem;
+	margin-left: 1rem;
+	color: #3bc9db;
+}
+
+.infoType {
+	color: #3bc9db;
+}
+
+.infoText {}
