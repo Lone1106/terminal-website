@@ -75,18 +75,6 @@ function createText(text) {
 	field.appendChild(p);
 }
 
-function newLine() {
-	const field = document.getElementById("textfield");
-	const p = document.createElement("p");
-	const span1 = document.createElement("span");
-	const span2 = document.createElement("span");
-	span1.textContent = "user@guest";
-	span2.textContent = " ~ %";
-	p.appendChild(span1);
-	p.appendChild(span2);
-	field.appendChild(p);
-}
-
 function createInputLine() {
 	const p = document.createElement("p");
 	const span = document.createElement("span");
@@ -198,6 +186,8 @@ async function about() {
 	createInfoLine("Location", "Location goes here");
 	await delay(lineDelay);
 	createInfoLine("Age", "21");
+	await delay(lineDelay);
+	createInfoLine("Education", "2017-2020 Apprenticeschip as whatever, since 2021 Job here");
 	await delay(lineDelay);
 	createInfoLine("Occupation", "Job name goes here");
 	await delay(lineDelay);
