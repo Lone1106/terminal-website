@@ -6,6 +6,7 @@
 
 html {
 	font-size: 82.5%;
+	line-height: 1.2;
 	font-family: "Ubuntu Mono", monospace;
 	color: #fff;
 }
@@ -17,7 +18,6 @@ html {
 h3 {
 	color: #4263eb;
 	letter-spacing: 1px;
-	text-decoration: underline;
 }
 
 .container {
@@ -48,6 +48,22 @@ h3 {
 	left: -500px;
 }
 
+@media (hover: none) {
+	.container {
+		padding: 0;
+	}
+
+	.terminal {
+		height: 100%;
+	}
+}
+
+@media (max-width: 400px) {
+	html {
+		font-size: 60%;
+	}
+}
+
 /* HEADER BAR */
 .terminal__head {
 	background-color: #dee2e6;
@@ -57,7 +73,7 @@ h3 {
 	display: flex;
 	gap: 0.7rem;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: flex-start;
 	position: sticky;
 	top: 0;
 	left: 0;
@@ -161,4 +177,3 @@ h3 {
 	color: #3bc9db;
 }
 
-.infoText {}

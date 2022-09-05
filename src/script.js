@@ -1,10 +1,12 @@
 const textContainter = document.getElementById("terminal__main");
 const area = document.getElementById("area");
-const year = document.querySelector(".year");
 const container = document.querySelector(".container");
 
 const lineDelay = 150;
 let started = false;
+
+// SET COPY YEAR
+let year = new Date().getFullYear();
 
 // SET STUFF ON LOAD
 window.onload = () => {
@@ -44,9 +46,9 @@ function getInput() {
 	return data;
 }
 
-function scrollToBottom () {
+function scrollToBottom() {
 	let terminal = document.querySelector(".terminal");
-  terminal.scrollTop = terminal.scrollHeight;
+	terminal.scrollTop = terminal.scrollHeight;
 }
 
 // CLEAR FUNCTIONS
@@ -141,7 +143,7 @@ function createHeader(text) {
 	const field = document.getElementById("textfield");
 	const h3 = document.createElement("h3");
 	h3.setAttribute("class", "linespace");
-	h3.innerHTML = text;
+	h3.innerHTML = `~ ${text}`;
 	field.appendChild(h3);
 }
 // CREATE SECTIONS
@@ -157,75 +159,103 @@ async function startup() {
 	await delay(lineDelay);
 	createText("type 'help' for all commands");
 	await delay(lineDelay);
+	createText("Click anywhere to focus input. Input is focused by default");
+	await delay(lineDelay);
 	createInputLine();
 }
 
 async function help() {
 	await delay(lineDelay);
-	createHeader("Commands");
+	createHeader("Terminal Commands");
 	await delay(lineDelay);
 	createInfoLine("help", "display all available commands");
 	await delay(lineDelay);
-	createInfoLine("clear", "clear the console of all in- and output");
+	createInfoLine("clear", "clears the console");
 	await delay(lineDelay);
-	createInfoLine("about", "gets info about owner of the page");
+	createInfoLine("about", "get some info about me");
 	await delay(lineDelay);
-	createInfoLine("projects", "take a look at the owners projects");
+	createInfoLine("projects", "take a look at some recent projects");
 	await delay(lineDelay);
-	createInfoLine("links", "get links for the owners social media");
+	createInfoLine("social", "check out my social accounts");
+	await delay(lineDelay);
+	createInfoLine("copy", "copyright information");
 	await delay(lineDelay);
 	scrollToBottom();
 }
 
 async function about() {
 	await delay(lineDelay);
-	createHeader("About");
+	createHeader("About me");
 	await delay(lineDelay);
-	createInfoLine("Name", "Name goes here");
+	createInfoLine("Name", "Jan");
 	await delay(lineDelay);
-	createInfoLine("Location", "Location goes here");
+	createInfoLine("Location", "Germany - Nürnberg");
 	await delay(lineDelay);
 	createInfoLine("Age", "21");
 	await delay(lineDelay);
-	createInfoLine("Education", "2017-2020 Apprenticeschip as whatever, since 2021 Job here");
+	createInfoLine(
+		"Education",
+		"09/2017 - 03/2021 Apprenticeschip as Mediadesigner"
+	);
 	await delay(lineDelay);
-	createInfoLine("Occupation", "Job name goes here");
+	createInfoLine("Occupation", "since 03/2021 Mediadesigner for Prepress");
 	await delay(lineDelay);
-	createInfoLine("Skills", "HTML, CSS/SASS, JS, React, Python, Adobe AI/PS");
+	createInfoLine(
+		"Skills",
+		"HTML, CSS/SASS, JS, React, Python, Adobe AI/PS, Packedge, Prepress, Prinect"
+	);
 	await delay(lineDelay);
 	createInfoLine(
 		"Languages",
 		"German(N), English(C2), Japanese(B1), Spanish(A1)"
 	);
 	await delay(lineDelay);
-	createInfoLine("Hobbies", "Reading, coding, tennis, meeting with friends");
+	createInfoLine(
+		"Interests",
+		"Reading, coding, building own web projects, foreign languages and cultures"
+	);
 	await delay(lineDelay);
 	scrollToBottom();
 }
 
 async function projects() {
 	await delay(lineDelay);
-	createHeader("Projects");
+	createHeader("Recent Projects");
 	await delay(lineDelay);
 	createText("Terminal Portfolio website");
-	createLink("view on Github", "https://github.com/Lone1106/terminal-website");
-	createLink("live preview", "https://www.google.de/");
 	await delay(lineDelay);
-	createText("React Flashcard Appliation");
-	createLink("view on Github", "https://github.com/Lone1106/flashcard-app");
-	createLink("live preview", "https://www.google.de/");
+	createLink("Github", "https://github.com/Lone1106/terminal-website");
+	createLink("preview", "https://www.google.de/");
+	await delay(lineDelay);
+	createText("React Flashcard Application");
+	await delay(lineDelay);
+	createLink("Github", "https://github.com/Lone1106/flashcard-app");
+	createLink("preview", "https://www.google.de/");
+	await delay(lineDelay);
+	createText("Python breakout game");
+	await delay(lineDelay);
+	createLink("Github", "https://github.com/Lone1106/space-invaders-python");
+	scrollToBottom();
+}
+
+async function social() {
+	await delay(lineDelay);
+	createHeader("Social Links");
+	await delay(lineDelay);
+	createLink("GitHub --> visit", "https://github.com/Lone1106");
+	await delay(lineDelay);
+	createLink("LinkedIn --> visit", "https://www.linkedin.com/");
 	await delay(lineDelay);
 	scrollToBottom();
 }
 
-async function links() {
+async function copy() {
 	await delay(lineDelay);
-	createHeader("Links");
+	createHeader("Copyright Info");
 	await delay(lineDelay);
-	createLink("GitHub", "https://github.com/Lone1106");
+	createText(`Copyright ${year} Jan Reichherzer`);
 	await delay(lineDelay);
-	createLink("LinkedIn", "https://www.linkedin.com/");
-	await delay(lineDelay);
+	createText("Feel free to use anything for your own needs");
 	scrollToBottom();
 }
 
@@ -244,8 +274,11 @@ function actOnInput(inp) {
 		case "projects":
 			projects();
 			break;
-		case "links":
-			links();
+		case "social":
+			social();
+			break;
+		case "copy":
+			copy();
 			break;
 		default:
 			createError("Command not defined! Check 'help' for all commands!");
