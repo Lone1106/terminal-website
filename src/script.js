@@ -207,7 +207,7 @@ async function about() {
 	await delay(lineDelay);
 	createInfoLine(
 		"Languages",
-		"German(N), English(C2), Japanese(B1), Spanish(A1)"
+		"German(N), English(C2), Japanese(B1)"
 	);
 	await delay(lineDelay);
 	createInfoLine(
