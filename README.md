@@ -8,3 +8,6 @@ Currently available commands:
 - about (get info about the owner)
 - projects (show current projects of the owner)
 - links (show social media links of the owner)
+
+
+[Preview here](https://harmonious-platypus-6d8124.netlify.app/)
