@@ -10,4 +10,4 @@ Currently available commands:
 - links (show social media links of the owner)
 
 
-[Preview here](https://harmonious-platypus-6d8124.netlify.app/)
+[Preview here](https://prismatic-kleicha-141b84.netlify.app/)
